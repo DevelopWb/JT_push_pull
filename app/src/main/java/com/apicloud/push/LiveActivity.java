@@ -51,20 +51,6 @@ public class LiveActivity extends AppCompatActivity {
             // Pre-O behavior.
             startService(new Intent(this, BackgroundService.class));
         }
-//        if (conn == null) {
-//            conn = new ServiceConnection() {
-//                @Override
-//                public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-//                    mService = ((BackgroundService.LocalBinder) iBinder).getService();
-//                }
-//
-//                @Override
-//                public void onServiceDisconnected(ComponentName componentName) {
-//
-//                }
-//            };
-//        }
-//        bindService(new Intent(this, BackgroundService.class), conn, 0);
     }
 
     @Override
@@ -138,10 +124,6 @@ public class LiveActivity extends AppCompatActivity {
 
         mLiveCameraView.init(this, streamAVOption);
         mLiveCameraView.addStreamStateListener(resConnectionListener);
-//        LinkedList<BaseHardVideoFilter> files = new LinkedList<>();
-//        files.add(new GPUImageCompatibleFilter(new GPUImageBeautyFilter()));
-//        files.add(new WatermarkFilter(BitmapFactory.decodeResource(getResources(),R.mipmap.live),new Rect(100,100,200,200)));
-//        mLiveCameraView.setHardVideoFilter(new HardVideoGroupFilter(files));
     }
 
     RESConnectionListener resConnectionListener = new RESConnectionListener() {
